@@ -22,7 +22,7 @@ class Navigation extends Component {
   render() {
     return ( this.state.isOpen ? (
         <div className="nav-links nav-links-active">
-          <div class="navigation-images">
+          <div className="navigation-images">
             <a href="index.html"><p className="nav-logo">S&J</p></a>
             <img src={closedX} alt="Navigation Hamburger" onClick={this.closeNavClick}/>
           </div>

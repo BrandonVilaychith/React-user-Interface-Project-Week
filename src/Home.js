@@ -43,7 +43,7 @@ class Home extends Component {
                         <div className="button">View Designs</div>
                     </div>
                     <img src={homeImg2} alt="Buildings"/>
-                    <img src={homeImg2Mobile} class="mobileImage" alt=""/>
+                    <img src={homeImg2Mobile} className="mobileImage" alt=""/>
                 </div>
             </section>
             <section className="projects">
@@ -53,7 +53,7 @@ class Home extends Component {
                     <img src={bannerImg1Mobile} className="mobileImage" alt="villas"/>
                     <h3 className="right-squares">THE VILLAS</h3>
                 </div>
-                <div class="project-text">
+                <div className="project-text">
                     <p>The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the day,
                     going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud
                     solution.</p>

@@ -12,7 +12,26 @@ import sustainabilityMobile from "./img/services/services-tab-mobile-sustainabil
 class Services extends Component {
   constructor() {
     super();
+    this.dataTab = null;
+    this.tabItems = React.createRef();
+    this.tabs = React.createRef();
   }
+
+  handleTabClick = (e) => {
+    // console.dir(e.target.dataset.tab);
+    this.dataTab = e.target.dataset.tab;
+    console.log(this.tabs);
+    for(let i = 0; i < 4; i++) {
+      if (this.tabItems.current.childNodes[i].dataset.tab == this.dataTab) {
+        this.tabItems.current.childNodes[i].classList.add('active-item');
+        this.tabs.current.childNodes[i].classList.add('active-tab');
+      } else {
+        this.tabItems.current.childNodes[i].classList.remove('active-item');
+        this.tabs.current.childNodes[i].classList.remove('active-tab');
+      }
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -27,13 +46,13 @@ class Services extends Component {
 				    cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service
 				    for state of the art customer service.</p>
 		    </section>
-		      <div className="tabs">
+		      <div className="tabs" onClick={this.handleTabClick} ref={this.tabs}>
             <div className="tab active-tab" data-tab="1">Pre-Construction</div>
             <div className="tab" data-tab="2">Construction</div>
             <div className="tab" data-tab="3">Design Build</div>
             <div className="tab" data-tab="4">Sustainability</div>
 		      </div>
-		      <div className="tab-items">
+		      <div className="tab-items" ref={this.tabItems}>
             <div className="tab-item active-item" data-tab="1">
               <div className="tab-item-title">Pre-Construction</div>
               <div className="tab-item-content">
